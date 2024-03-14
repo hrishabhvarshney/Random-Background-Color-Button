@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #btn {
+            background: #7fff00;
+            color: black;
+            font-size: 20px;
+            border-radius: 10px;
+            margin: 48vh 93vh;
+            padding: 10px 30px;
+            cursor: pointer;
+        }
+
+        #btn:hover {
+            font-family: monospace;
+            background-color: dimgrey;
+            color: #212121;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">Click Me</button>
+    <script>
+        const btn = document.querySelector('#btn');
+        const body = document.querySelector("body");
+        const color = () => {
+            const hex = '0123456789ABCDEF';
+            let color = '#'
+            for (let i = 0; i < 6; i++) {
+                color += hex[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        btn.addEventListener('click', () => {
+            body.style.backgroundColor = color();
+        })
+    </script>
+</body>
+
+</html>
